@@ -1,0 +1,74 @@
+create table employees(
+employee_number number(10) not null,
+employee_name varchar2(50)not null,
+department_id number(10),
+constraint employees_pk primary key(employee_number)
+);
+
+
+alter table employees
+modify employee_name varchar2 (75);
+
+
+alter table drop employees
+drop column department_id;
+
+
+alter table drop employees
+drop column employee_number;
+
+
+create table customers(
+customer_id number(10) not null,
+customer_name varchar2(50),
+address varchar2(50),
+city varchar2(50),
+state varchar2(50),
+zip_code varchar2(10),
+constraint customers_pk primary key ( customer_id)
+);
+
+
+alter table customers
+modify (customer_name varchar2(50)not null,
+state varchar2(30)
+);
+
+
+create table departments
+(dep_id number(10)not null,
+dep_name varchar2(50)not null,
+constraint departments_pk primary key(dep_id)
+);
+
+
+alter table departments
+rename column dep_name to department_name;
+
+
+alter table drop departments
+drop column dep_name;
+
+
+alter table drop departments;
+
+
+select * from departments;
+
+
+create table accounts(accno int primary key,
+accnm varchar(30),acctype varchar(10),
+balance float check(balance>=500));
+
+
+alter table accounts add mobno varchar(10);
+
+
+alter table accounts alter column accnm varchar(50);
+
+
+alter table accounts add opendt datetime;
+
+
+alter table accounts alter column opendt date;
+
