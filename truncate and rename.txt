@@ -1,0 +1,65 @@
+create table employee(
+emp_id number(10)not null,
+emp_name varchar2(60)not null,
+dep_id number(7)not null,
+emp_work varchar2(60),
+constraint employee_pk primary key(emp_id)
+);
+
+rename employee to emp;
+
+rename employee to employees;
+
+rename employee to worker;
+
+select * from employee;
+
+select * from worker;
+
+truncate table worker;
+
+lock table worker in exclusive mode no wait;
+
+lock table worker@remote 
+in change mode;
+
+create table promotions(
+promo_id number primary key,
+promo_name varchar2 (55),
+start_date Date not null,
+end_date Date not null,
+check (end_date > start_date)
+);
+
+drop table promotions
+
+create or replace function count_promotions
+return number
+is
+v_count number;
+begin select 
+count(*)
+into
+v_count
+from
+promotions;
+return v_count;
+end;
+
+select promo_name,
+search_condition
+from
+all constraints
+where
+promotions='promo_name'
+and constraint_type='c';
+
+Rename promotions to campaigns;
+
+select constraint_name,
+search_condition
+from
+all constraints
+where
+table_name='campaigns'
+and constraint_type='c';

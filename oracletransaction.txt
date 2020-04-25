@@ -1,0 +1,21 @@
+create table accounts(accno int primary key,
+accnm varchar(30),acctype varchar(10),
+balance float check(balance>=500));
+
+insert into accounts values(1001,'sachin tendulkar','saving',45000);
+insert into accounts values(1002,'maria sharapova','fixed',23100);
+insert into accounts values(1003,'mitchell johnson','current',15300);
+insert into accounts values(1004,'edan hazard','saving',41300);
+insert into accounts values(1005,'robert lewandowski','saving',21600);
+insert into accounts values(1006,'gabriel jesus','fixed',37100);
+insert into accounts values(1008,'marcos alonso','saving',33900);
+insert into accounts values(1009,'david luiz','current',28400);
+insert into accounts values(1010,'glenn maxwell','fixed',61150);
+insert into accounts values(1012,'zaheer khan','saving',22570);
+insert into accounts values(1013,'antoine griezman','fixed',37640);
+insert into accounts values(1014,'mesut ozil','saving',53760);
+insert into accounts values(1015,'paul pogba','saving',67370);
+insert into accounts values(1016,'garry cahill','current',39550);
+insert into accounts values(1017,'thibaut courtois','fixed',97550);
+insert into accounts values(1018,'cesar azpilicueta','current',82716);
+
