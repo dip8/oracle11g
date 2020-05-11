@@ -1,0 +1,122 @@
+************** GENERAL QUERIES ******************
+
+/* hi friends please follow youtube video step and creating database in oracle database and enjoy more opration below 
+please like share & subscribe my chainnel Digital Pionner*/
+
+************* Example1 *****************
+
+create table accounts(accno int primary key,
+accnm varchar(30),acctype varchar(10),
+balance float check(balance>=500));
+
+
+insert into accounts values(1001,'sachin tendulkar','saving',45000);
+insert into accounts values(1002,'maria sharapova','fixed',23100);
+insert into accounts values(1003,'mitchell johnson','current',15300);
+insert into accounts values(1004,'edan hazard','saving',41300);
+insert into accounts values(1005,'robert lewandowski','saving',21600);
+insert into accounts values(1006,'gabriel jesus','fixed',37100);
+insert into accounts values(1008,'marcos alonso','saving',33900);
+insert into accounts values(1009,'david luiz','current',28400);
+insert into accounts values(1010,'glenn maxwell','fixed',61150);
+insert into accounts values(1012,'zaheer khan','saving',22570);
+insert into accounts values(1013,'antoine griezman','fixed',37640);
+insert into accounts values(1014,'mesut ozil','saving',53760);
+insert into accounts values(1015,'paul pogba','saving',67370);
+insert into accounts values(1016,'garry cahill','current',39550);
+insert into accounts values(1017,'thibaut courtois','fixed',97550);
+insert into accounts values(1018,'cesar azpilicueta','current',82716);
+
+insert into accounts values(1019,'cesc fabregas','current',82716);
+insert into accounts values(1020,'ngolo kante','fixed',55871);
+insert into accounts values(1021,'victor moses','current',63228);
+insert into accounts values(1022,'willian','saving',75961);
+insert into accounts values(1023,'adam gilchrist','current',26551);
+insert into accounts values(1024,'michy batshuayi','fixed',63558);
+insert into accounts values(1025,'andreas christensen','saving',68523);
+insert into accounts values(1026,'alvaro morata','saving',96995);
+insert into accounts values(1027,'davide zappacosta','current',49668);
+insert into accounts values(1028,'daniel drinkwater','fixed',75442);
+insert into accounts values(1029,'mohamed salah','saving',83229);
+insert into accounts values(1030,'sadio mane','current',45889);
+insert into accounts values(1031,'roberto firmino','fixed',96321);
+insert into accounts values(1032,'alex oxlade chamberlain','current',58449);
+insert into accounts values(1033,'alexandre lacazette','saving',36227);
+insert into accounts values(1034,'raheem sterling','fixed',62994);
+
+insert into accounts values(1035,'harry kane','current',78751);
+insert into accounts values(1036,'dele alli','fixed',96637);
+insert into accounts values(1037,'hugo lloris','saving',84552);
+insert into accounts values(1038,'bill gates','current',93119);
+insert into accounts values(1039,'amir khan','saving',66554);
+
+select * from accounts;
+
+---------------
+Insert into accounts(accno,accnm,balance) 
+values (1043, ‘sharayu global’ , 53500.00);
+
+Update accounts set acctype=‘fixed’ 
+where accno=1003;
+
+Update accounts 
+set balance=balance+(balance*3/100);
+
+Delete from accounts where balance<1000;  //not used better way
+
+Delete from accounts; //not used better way
+
+Select * from accounts;
+
+Select accnm,balance from accounts;
+
+Select * from accounts 
+where acctype=‘saving’ and balance>50000;
+
+Select * from accounts 
+where acctype=‘fixed’ or balance>100000;
+
+Select * from accounts 
+where balance between 20000 and 45000;
+
+Select accnm from accounts 
+where acctype in (‘saving’,’fixed’,’current’);
+
+Select * from account 
+where not acctype=‘current’;
+
+Select * from accounts order by accnm;
+
+Select * from accounts order by balance desc;
+
+************* Example2 *****************
+
+create table book(
+id number(10)not null primary key,
+book_name varchar2(60)not null,
+author_name varchar2(50)not null,
+price number(7)not null,
+quntity number(7)
+);
+
+insert into book values(1,'javaDeveloper','Gruehill',250,20);
+
+insert into book values(2,'dot.net','tatahil',520,30);
+
+insert into book values(3,'c-programing','balaguru',340,12);
+
+insert into book values(4,'c++programng','balaguru',200,20);
+
+select * from book;
+
+delete from book where id=2;//not used better way
+
+update book
+set book_name='javaprogramming' author_name='gruehill' price=250 quntity=10
+where id=2;
+
+update book
+set book_name='oracle' author_name='javase' price=210 quntity=25
+where id=3
+
+drop table book;//not used better way
