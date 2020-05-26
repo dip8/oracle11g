@@ -1,0 +1,21 @@
+create table customer (
+cust_id number(3)primary key,
+cust_name varchar2(50)not null,
+opening_amt number(7)not null,
+receive_amt number(7)not null
+);
+
+insert into customer values(1,'hanrry',7000,11000);
+
+insert into customer values(2,'joj',7000,12000);
+
+insert into customer values(3,'sandy',8000,10000);
+
+insert into customer values(4,'john',10000,9000);
+
+select * from customer
+
+select cust_name,opening_amt,receive_amt,
+(opening_amt + receive_amt)
+from customer
+where(opening_amt +receive_amt)>15000;
