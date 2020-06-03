@@ -1,0 +1,21 @@
+create table customer (
+cust_id number(3)primary key,
+cust_name varchar2(50)not null,
+opening_amt number(7)not null,
+receive_amt number(7)not null,
+payment_amt number(7)not null,
+outstanding_amt number(7)not null
+);
+
+insert into customer values(1,'sandy',4000,3000,8000,6000)
+
+insert into customer values(2,'ajay',5000,4000,5000,7000)
+
+insert into customer values(3,'sanjay',7000,4000,5000,9000)
+
+select * from customer
+
+select cust_name,opening_amt,receive_amt,
+outstanding_amt,(receive_amt*5/100)commission
+from customer
+where outstanding_amt<=3000;
