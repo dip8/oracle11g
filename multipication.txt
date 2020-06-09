@@ -1,0 +1,18 @@
+
+create table agents(
+agent_code number(4)primary key,
+agent_name varchar2(50)not null,
+working_area varchar2(50)not null,
+payment number(7)not null
+);
+
+insert into agents values(1,'samai','mumbai',5000)
+
+insert into agents values(2,'akshay','pune',8000)
+
+select * from agents
+
+select agent_code,agent_name,working_area,
+(payment*2)
+from agents
+where (payment * 2)>0.25;
